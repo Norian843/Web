@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Servicios José de León</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('Image_fx.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: none;
+        }
+        h1 {
+            color: #0066cc;
+        }
+        p {
+            line-height: 1.6;
+        }
+
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #loading-screen img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .elegant-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .elegant-text .email {
+            font-family: Arial, sans-serif;
+        }
+
+        @keyframes irregularFlicker {
+            0% { color: black; }
+            7% { color: yellow; }
+            12% { color: black; }
+            19% { color: yellow; }
+            23% { color: black; }
+            34% { color: yellow; }
+            41% { color: black; }
+            50% { color: yellow; }
+            55% { color: black; }
+            64% { color: yellow; }
+            70% { color: black; }
+            83% { color: yellow; }
+            100% { color: black; }
+        }
+
+        .irregular-flicker {
+            animation: irregularFlicker 2s infinite;
+        }
+
+        @keyframes sparkle {
+            0% { text-shadow: none; }
+            100% { text-shadow: 0 0 5px #ff0, 0 0 10px #ff0, 0 0 15px #ff0, 0 0 20px #ff0; }
+        }
+
+        .sparkle {
+            animation: sparkle 1s infinite alternate;
+        }
+
+        .stop-flicker {
+            animation: none;
+            color: black;
+        }
+
+        .stop-sparkle {
+            animation: none;
+            text-shadow: none;
+        }
+
+        .floating-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+
+        .contact-modal {
+            display: none;
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .highlight {
+            background-color: yellow;
+            padding: 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Pantalla de carga -->
+    <div id="loading-screen">
+        <img src="power-energy.gif" alt="Cargando...">
+        <div class="elegant-text">
+            Created by Noxen<br>
+            <span class="email">✉️ technologicalfoundation@gmail.com</span>
+        </div>
+    </div>
+
+    <!-- Elemento de audio -->
+    <audio id="loading-sound" src="sound.mp3"></audio>
+
+    <div class="container">
+        <h1>Multi Servicios José de León</h1>
+        <p class="irregular-flicker">Con más de 10 años de experiencia en el sector, Multi Servicios José de León se ha consolidado como líder en servicios de instalación eléctrica e hidráulica. Nuestra vasta experiencia nos permite ofrecer soluciones innovadoras y eficientes, garantizando la máxima calidad y seguridad en cada proyecto.</p>
+        <h2 class="sparkle">Instalación Eléctrica</h2>
+        <p class="irregular-flicker">Nuestro servicio de instalación eléctrica está diseñado para garantizar la seguridad y eficiencia en cada proyecto. Desde la instalación de sistemas eléctricos en nuevas construcciones hasta la actualización de sistemas existentes, nuestro equipo de expertos se asegura de que todo funcione perfectamente. Utilizamos materiales de la más alta calidad y seguimos los estándares más rigurosos para asegurar la satisfacción de nuestros clientes.</p>
+        <h2 class="sparkle">Instalación Hidráulica</h2>
+        <p class="irregular-flicker">En el ámbito de la instalación hidráulica, ofrecemos soluciones completas que incluyen la instalación de tuberías, sistemas de agua caliente y fría, y sistemas de riego. Nos enorgullece decir que cada proyecto es realizado con la máxima precisión y cuidado, asegurando resultados duraderos y de alta calidad. Además, ofrecemos servicios de mantenimiento preventivo y correctivo para garantizar el óptimo funcionamiento de sus instalaciones.</p>
+        <p class="irregular-flicker">En Multi Servicios José de León, nos esforzamos por superar las expectativas de nuestros clientes, proporcionando un servicio amable, profesional y eficiente. Confíe en nosotros para todas sus necesidades de instalación y experimenta la diferencia de trabajar con un equipo que realmente se preocupa por su satisfacción.</p>
+    </div>
+
+    <button class="floating-button" id="contactButton">
+        <i class="fas fa-phone"></i>
+    </button>
+
+    <div class="contact-modal" id="contactModal">
+        <h3>Información de Contacto</h3>
+        <p>¿Necesitas ayuda o más información? No dudes en contactarnos.</p>
+        <p>Teléfono: <span class="highlight" id="phoneNumber">123-456-7890</span></p>
+        <button onclick="copyPhoneNumber()">Copiar Número</button>
+    </div>
+
+    <script>
+        window.onload = function() {
+            // Simular tiempo de carga
+            setTimeout(function() {
+                var loadingScreen = document.getElementById('loading-screen');
+                loadingScreen.style.display = 'none';
+                document.querySelector('.container').style.display = 'block';
+
+                setTimeout(function() {
+                    var paragraphs = document.querySelectorAll('.irregular-flicker');
+                    paragraphs.forEach(function(p) {
+                        p.classList.remove('irregular-flicker');
+                        p.classList.add('stop-flicker');
+                    });
+
+                    var subtitles = document.querySelectorAll('.sparkle');
+                    subtitles.forEach(function(h2) {
+                        h2.classList.remove('sparkle');
+                        h2.classList.add('stop-sparkle');
+                    });
+                }, 5000);
+            }, 4000); // Tiempo de carga simulado de 4 segundos
+
+            var contactButton = document.getElementById('contactButton');
+            var contactModal = document.getElementById('contactModal');
+            var loadingSound = document.getElementById('loading-sound');
+
+            contactButton.addEventListener('click', function() {
+                loadingSound.play().catch(e => console.log("Audio play failed:", e));
+
+                if (contactModal.style.display === 'none' || contactModal.style.display === '') {
+                    contactModal.style.display = 'block';
+                } else {
+                    contactModal.style.display = 'none';
+                }
+            });
+        };
+
+        function copyPhoneNumber() {
+            var phoneNumber = document.getElementById('phoneNumber');
+            var range = document.createRange();
+            range.selectNode(phoneNumber);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges();
+            alert('Número copiado al portapapeles: ' + phoneNumber.textContent);
+        }
+    </script>
+</body>
+</html>
